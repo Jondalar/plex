@@ -1,7 +1,9 @@
 FROM phusion/baseimage:0.9.11
-MAINTAINER needo <needo@superhero.org>
+MAINTAINER jondalar <alex@iphonedation.com>
+#Forked from needo <needo@superhero.org>
 #Based on the work of Eric Schultz <eric@startuperic.com>
 #Thanks to Tim Haak <tim@haak.co.uk>
+
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set correct environment variables
@@ -18,12 +20,15 @@ RUN gdebi -n /tmp/plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb
 RUN echo plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb | awk -F_ '{print $2}' > /tmp/version
 RUN rm -f /tmp/plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb
 
+# we need an add to copy the plugins in!
+
 # Fix a Debianism of plex's uid being 101
 RUN usermod -u 999 plex
 RUN usermod -g 100 plex
 
 VOLUME /config
 VOLUME /data
+VOLUME /recordings
 
 EXPOSE 32400
 

@@ -1,4 +1,21 @@
-This is a Dockerfile setup for plex with plexpass - http://plex.tv/
+## Plex+yaVDR Docker image ##
+
+This is based on the work of needo's image, who himself based his work upon 
+Eric Schultz <eric@startuperic.com> and the images from Tim Haak <tim@haak.co.uk>
+
+It basically setups an image with plex (for plexpass users) and adds in the
+2 existing bundles to connect Plex with yaVDR.
+
+a) LiveTV by myself
+b) VDR.Bundle by Dariush Forouher and Friedhelm Buescher
+
+Links to learn about the pieces installed:
+
+* plex with plexpass - http://plex.tv/
+* VDR.bundle - https://github.com/forouher/VDR.bundle 
+* plex-vdr-live-tv.bundle https://github.com/Jondalar/plex-vdr-live-samsung-tv-plugin.bundle
+
+Installation/Build:
 
 To run the latest plexpass version:
 
@@ -17,3 +34,11 @@ NOTE: It *must* be the full version name (i.e. 0.9.9.8.436-8abe5c0) replace with
 After install go to:
 
 http://server:32400/web/index.html#!/dashboard and login with your myPlex credentials
+
+## A note to docker-images for the VDR community: ##
+
+Once the docker image has been been build with "run", you only need to start/stop/restart it with "docker start" e.g. It will keep the parameters 
+Install something like dockerui in case you want to have a little comfort.
+
+I will provide a startup script for this and some more stuff (sabznzbplus, sickbeard, couchpotatoe, handbrake-conversion, iStreamdev,...) 
+once this is running well.
