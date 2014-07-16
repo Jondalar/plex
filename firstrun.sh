@@ -28,3 +28,4 @@ else
   gdebi -n /tmp/plexmediaserver_${VERSION}_amd64.deb
   mv /tmp/plexmediaserver /etc/default/
 fi
+

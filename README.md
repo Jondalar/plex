@@ -15,7 +15,15 @@ Links to learn about the pieces installed:
 * VDR.bundle - https://github.com/forouher/VDR.bundle 
 * plex-vdr-live-tv.bundle https://github.com/Jondalar/plex-vdr-live-samsung-tv-plugin.bundle
 
-Installation/Build:
+Build:
+
+check this out to any convient place, I used /usr/local/src/dockerfiles
+
+Then run
+
+docker build -t jondalar/plexvdr /usr/local/src/dockerfiles/plex/
+
+Run:
 
 To run the latest plexpass version:
 
@@ -31,14 +39,19 @@ docker run -d --net="host" --name="plex" -v /path/to/plex/config:/config -v /pat
 
 NOTE: It *must* be the full version name (i.e. 0.9.9.8.436-8abe5c0) replace with the version you desire in the command above
 
+Example for my yaVDR installation:
+
+docker run -d --net="host" --name="plex" -v /usr/local/docker-configs:/config -v /srv/vdr/video.00/AVIs:/data -v /srv/vdr/video.00/Filme:/recordings -v /etc/localtime:/etc/localtime:ro -p 32400:32400 jondalar/plexvdr
+
+
 After install go to:
 
 http://server:32400/web/index.html#!/dashboard and login with your myPlex credentials
 
+
+
 ## A note to docker-images for the VDR community: ##
 
-Once the docker image has been been build with "run", you only need to start/stop/restart it with "docker start" e.g. It will keep the parameters 
+Once the docker container has started with "run", you only need to start/stop/restart it with "docker start" e.g. It will keep the parameters 
 Install something like dockerui in case you want to have a little comfort.
 
-I will provide a startup script for this and some more stuff (sabznzbplus, sickbeard, couchpotatoe, handbrake-conversion, iStreamdev,...) 
-once this is running well.

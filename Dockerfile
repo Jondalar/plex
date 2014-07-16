@@ -40,6 +40,11 @@ RUN mkdir -p /etc/my_init.d
 ADD firstrun.sh /etc/my_init.d/firstrun.sh
 RUN chmod +x /etc/my_init.d/firstrun.sh
 
+#Add .bundles to /tmp so we can put them to the right place after first run!
+RUN mkdir /tmp/plugins
+ADD plugins  /tmp/plugins
+RUN touch /tmp/novdrbundlesyet
+
 # Add Plex to runit
 RUN mkdir /etc/service/plex
 ADD plex.sh /etc/service/plex/run
