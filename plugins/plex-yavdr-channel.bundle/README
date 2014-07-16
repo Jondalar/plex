@@ -1,0 +1,31 @@
+*Plex VDR Live Plugin*
+
+This is a fork of the already existing bundle from  http://gitlab.iphonedation.com/alex/plex-vdr-live-tv-plugin
+This is a very simple and first version of python plugin for Plex to stream live TV from my VDR to my Samsung Smart TV.
+
+Requirements:
+
+a running VDR installation
+vdr-plugin-streamdev
+vdr-plugin-restfulapi
+
+Install:
+
+1) copy the .bundle part to your Plex plugin folder. On my system (ubuntu 14.04LTS) it's here:
+
+/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Plug-ins
+
+2) Set permissions so the user plex is running under can run this and make the .py files executable.
+
+Examples:
+
+chown -R plex:plex 'plex-vdr-live-samsung-tv-plugin.bundle'
+chmod +x 'plex-vdr-live-samsung-tv-plugin.bundle/Content/Code/__init__.py'
+
+3) Restart Plex
+4) Enjoy the Stream in your Plexclient
+
+Known issues:
+
+* No DVB subtitles support.
+* Audio stream can't be selected manually.
