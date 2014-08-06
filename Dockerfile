@@ -15,7 +15,8 @@ CMD ["/sbin/my_init"]
 # Install Plex
 RUN apt-get -q update
 RUN apt-get install -qy gdebi-core wget
-RUN wget -P /tmp http://downloads.plexapp.com/plex-media-server/0.9.9.12.504-3e7f93c/plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb
+#RUN wget -P /tmp http://downloads.plexapp.com/plex-media-server/0.9.9.12.504-3e7f93c/plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb
+RUN wget -P /tmp http://downloads.plexapp.com/plex-media-server/0.9.9.14.531-7eef8c6/plexmediaserver_0.9.9.14.531-7eef8c6_amd64.deb
 RUN gdebi -n /tmp/plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb
 RUN echo plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb | awk -F_ '{print $2}' > /tmp/version
 RUN rm -f /tmp/plexmediaserver_0.9.9.12.504-3e7f93c_amd64.deb
