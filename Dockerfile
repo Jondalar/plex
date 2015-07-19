@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.11
+FROM phusion/baseimage:0.9.15
 MAINTAINER jondalar <alex@iphonedation.com>
 #Forked from needo <needo@superhero.org>
 #Based on the work of Eric Schultz <eric@startuperic.com>
