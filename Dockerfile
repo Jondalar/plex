@@ -16,10 +16,10 @@ CMD ["/sbin/my_init"]
 RUN apt-get -q update
 RUN apt-get install -qy gdebi-core wget
 #RUN wget -P /tmp https://downloads.plex.tv/plex-media-server/0.9.11.7.803-87d0708/plexmediaserver_0.9.11.7.803-87d0708_amd64.deb
-RUN wget -P /tmp https://downloads.plex.tv/plex-media-server/0.9.11.16.958-80f1748/plexmediaserver_0.9.11.16.958-80f1748_amd64.deb
-RUN gdebi -n /tmp/plexmediaserver_0.9.11.16.958-80f1748_amd64.deb
-RUN echo plexmediaserver_0.9.11.16.958-80f1748_amd64.deb | awk -F_ '{print $2}' > /tmp/version
-RUN rm -f /tmp/plexmediaserver_0.9.11.16.958-80f1748_amd64.deb
+RUN wget -P /tmp https://downloads.plex.tv/plex-media-server/0.9.12.4.1192-9a47d21/plexmediaserver_0.9.12.4.1192-9a47d21_amd64.deb
+RUN gdebi -n /tmp/plexmediaserver_0.9.12.4.1192-9a47d21_amd64.deb
+RUN echo plexmediaserver_0.9.12.4.1192-9a47d21_amd64.deb | awk -F_ '{print $2}' > /tmp/version
+RUN rm -f /tmp/plexmediaserver_0.9.12.4.1192-9a47d21_amd64.deb
 
 # we need an add to copy the plugins in!
 
